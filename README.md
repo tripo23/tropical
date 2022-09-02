@@ -18,7 +18,6 @@ This project is currently in development. Users can see a list of products and f
 
 ## Dependencies installed
 
-* Github
 * React Bootstrap
 * Materialize icons
 * Google Fonts
