@@ -1,4 +1,3 @@
-import logo from '../assets/img/logo.webp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -13,7 +12,7 @@ function NavbarTropical() {
       <Navbar.Brand href="#home">
             <img
               alt=""
-              src={logo}
+              src='https://res.cloudinary.com/tripo23/image/upload/v1662130213/tropical/logo_wxccs5.webp'
               width="30"
               height="30"
               className="d-inline-block align-top"
