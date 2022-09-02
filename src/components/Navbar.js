@@ -3,13 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
+
 
 function NavbarTropical() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-      <Navbar.Brand href="#home">
+      <Navbar.Brand as={Link} to='/'>
             <img
               alt=""
               src='https://res.cloudinary.com/tripo23/image/upload/v1662130213/tropical/logo_wxccs5.webp'
@@ -22,14 +24,16 @@ function NavbarTropical() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <NavDropdown title="Productos" id="basic-nav-dropdown">
+            <Nav.Link as={Link} to='/category/interior'>De Interior</Nav.Link>
+            <Nav.Link as={Link} to='/category/exterior'>De Exterior</Nav.Link>
+            <Nav.Link as={Link} to='/category/arbol'>Árboles</Nav.Link>
+            {/* <NavDropdown title="Productos" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Plantas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Accesorios
               </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#link">Tips de cuidado</Nav.Link>
+            </NavDropdown> 
+            <Nav.Link href="#link">Tips de cuidado</Nav.Link>*/}
           </Nav>
           {/* acá va el shopping cart */}
           <Nav>
