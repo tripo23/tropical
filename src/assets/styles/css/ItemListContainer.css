@@ -1,0 +1,10 @@
+.itemListContainer {
+    padding: 3vh 0 3vh 0;
+    margin: auto;
+    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:10px
+}
