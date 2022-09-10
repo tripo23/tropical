@@ -1,9 +1,14 @@
 import ItemCount from "./ItemCount";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 const Item = (props) => {
+
+  const [itemCount, setItemCount] = useState(1);
+  const onAdd = (qty) => qty > 0 ? alert("¡Agregado!") : alert("Seleccioná la cantidad primero.");
+  
     return (
       
           <Card className="text-center" style={{ width: '18rem' }}>
@@ -16,7 +21,7 @@ const Item = (props) => {
             </Card.Body>
             </Link>
             <Card.Body>
-              <ItemCount stock={props.stock} initial={1} />
+              <ItemCount stock={props.stock} initial={itemCount} onAdd={onAdd} />
             </Card.Body>
             <Card.Footer className="text-muted fw-lighter fs-6">Stock: {props.stock}</Card.Footer>
           </Card>

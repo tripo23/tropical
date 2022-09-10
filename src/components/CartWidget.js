@@ -1,4 +1,4 @@
-import '../assets/styles/css/cartWidget.css';
+import '../styles/css/cartWidget.css';
 // import Badge from 'react-bootstrap/Badge';
 // import Button from 'react-bootstrap/Button';
 

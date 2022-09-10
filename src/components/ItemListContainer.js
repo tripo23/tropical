@@ -1,4 +1,4 @@
-import '../assets/styles/css/ItemListContainer.css';
+import '../styles/css/ItemListContainer.css';
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import promise from "../utils/promise";

@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/css/App.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
@@ -27,13 +27,6 @@ function NavbarTropical() {
             <Nav.Link as={Link} to='/category/interior'>De Interior</Nav.Link>
             <Nav.Link as={Link} to='/category/exterior'>De Exterior</Nav.Link>
             <Nav.Link as={Link} to='/category/arbol'>Árboles</Nav.Link>
-            {/* <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Plantas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Accesorios
-              </NavDropdown.Item>
-            </NavDropdown> 
-            <Nav.Link href="#link">Tips de cuidado</Nav.Link>*/}
           </Nav>
           {/* acá va el shopping cart */}
           <Nav>
