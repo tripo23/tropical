@@ -2,6 +2,7 @@ import ItemCount from "./ItemCount";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 
 const Item = (props) => {
@@ -21,7 +22,9 @@ const Item = (props) => {
             </Card.Body>
             </Link>
             <Card.Body>
-              <ItemCount stock={props.stock} initial={itemCount} onAdd={onAdd} />
+              {/* <ItemCount stock={props.stock} initial={itemCount} onAdd={onAdd} /> */}
+              <Button as={Link} to={`/item/${props.id}`} variant="outline-success"> Ver detalle </Button>
+
             </Card.Body>
             <Card.Footer className="text-muted fw-lighter fs-6">Stock: {props.stock}</Card.Footer>
           </Card>
