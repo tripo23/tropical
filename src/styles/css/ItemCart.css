@@ -1,0 +1,25 @@
+.center-alignment {
+    margin: auto 0 !important;
+}
+
+/* .container {
+    width: 85vw;
+} */
+
+.containerCart { 
+    margin: 10px 0 10px 0;
+}
+
+h4 {
+    padding-top: 2vh;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 0.8em;
+    }
+    .imageCart {
+        display: none;
+    }
+}

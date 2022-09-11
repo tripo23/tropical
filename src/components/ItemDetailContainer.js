@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
-  const [products, setProducts] = useState([]);
+  const [product, setProducts] = useState([]);
   
 
   //componentDidMount
@@ -19,12 +19,9 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="itemDetailContainer">
-        <ItemDetail items={products}/> 
+        <ItemDetail item={product}/> 
     </div>
   )
 }
 
-
-
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

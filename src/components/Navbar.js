@@ -24,13 +24,13 @@ function NavbarTropical() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to='/category/interior'>De Interior</Nav.Link>
-            <Nav.Link as={Link} to='/category/exterior'>De Exterior</Nav.Link>
-            <Nav.Link as={Link} to='/category/arbol'>Árboles</Nav.Link>
+            <Nav.Link as={Link} to='/category/2'>De Interior</Nav.Link>
+            <Nav.Link as={Link} to='/category/3'>De Exterior</Nav.Link>
+            <Nav.Link as={Link} to='/category/1'>Árboles</Nav.Link>
           </Nav>
           {/* acá va el shopping cart */}
           <Nav>
-            <CartWidget/>
+            <Nav.Link as={Link} to='/cart'><CartWidget/></Nav.Link>
           </Nav> 
         </Navbar.Collapse>
 

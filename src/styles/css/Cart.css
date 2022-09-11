@@ -1,0 +1,16 @@
+.delButton, button {
+    background-color: transparent;
+    border: none;
+    outline:none;
+}
+
+.subheader {
+    margin: 0 auto !important;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    .btn-cartEmpty {
+        font-size: 0.2em !important; 
+    }
+}

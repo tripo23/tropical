@@ -9,12 +9,12 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
-    const {category} = useParams(); // me lee la ruta y me trae el valor
+    const {categoryID} = useParams(); // me lee la ruta y me trae el valor
     
     //componentDidMount
     useEffect(() => {
-        if (category) {
-            promise(data.filter ( item => item.category === category))
+        if (categoryID) {
+            promise(data.filter ( item => item.categoryID == categoryID))
             .then(result => setProducts(result))
             .catch(err => console.log(err))    
         } else {
@@ -22,7 +22,7 @@ const ItemListContainer = () => {
             .then(result => setProducts(result))
             .catch(err => console.log(err))
         } 
-    },[category])
+    },[categoryID])
 
     return (
         <div className="itemListContainer">
