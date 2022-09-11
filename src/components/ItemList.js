@@ -1,11 +1,14 @@
 import Item from "./Item";
+import SpinnerTropical from "./SpinnerTropical";
 
 
 const ItemList = ({items}) => {
 
     return (
         <>
-            {
+            {   
+                items.length > 0
+                ?
                 items.map(item => (
                     <Item
                         key={item.id}
@@ -18,6 +21,7 @@ const ItemList = ({items}) => {
                         category={item.category}
                     />
                 ))
+                : <SpinnerTropical />
             }
         </>
     );
