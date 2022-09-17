@@ -85,7 +85,7 @@ const Cart = () => {
                 </Row>
                 </Card.Body>
                 <Card.Body className="text-center">
-                  <Row><Button variant="success">Checkout</Button></Row>
+                  <Row><Button variant="success">Terminar mi compra</Button></Row>
                 </Card.Body>
             </Card>
           </Col>

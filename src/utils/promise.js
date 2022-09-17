@@ -5,7 +5,7 @@ let promise = (task) => {
         if (is_ok) {
             setTimeout(() => {
                 resolve(task)
-            },2000);
+            },200);
         } else {
             reject("error");
         }
