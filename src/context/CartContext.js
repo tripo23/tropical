@@ -34,8 +34,25 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
+    const calcSubTotal = () => {
+        let subTotal = 0;
+        cartList.forEach(element => {
+            subTotal = subTotal + element.price * element.qty;
+        });
+        return subTotal;
+    }
+
+    const itemsQty = () => {
+        let qty = cartList.map (item => item.qty); /* Mapeo en un array las cantidades de los items del carrito */
+        return qty.reduce (((pV,cV) => pV + cV), 0); /* Sumo esas cantidades */
+    }
+
+    const shippingCost = () => {
+        return calcSubTotal() > 8000 ? 0 : 350
+    }
+
     return (
-        <CartContext.Provider value = {{cartList, addItem, removeItem, clear}}>
+        <CartContext.Provider value = {{cartList, addItem, removeItem, clear, calcSubTotal, shippingCost, itemsQty}}>
             {children}
         </CartContext.Provider>
     );
