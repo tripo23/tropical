@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import data from '../utils/data.js'
-import promise from '../utils/promise'
 import ItemDetail from './ItemDetail'
 import '../styles/css/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
