@@ -4,18 +4,20 @@ import promise from '../utils/promise'
 import ItemDetail from './ItemDetail'
 import '../styles/css/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
+import { firestoreFetchSingleDoc } from '../utils/firebaseConfig.js';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
-  const [product, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   
 
-  //componentDidMount
   useEffect(() => {
-    promise(data.find(item => item.id == id))
-        .then (result => setProducts(result))
+    firestoreFetchSingleDoc(id)
+        .then (result => setProduct(result))
         .catch (err => console.log(err))
-  },[]);
+  }, []);
+
+
 
   return (
     <div className="itemDetailContainer">

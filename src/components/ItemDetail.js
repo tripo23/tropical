@@ -21,8 +21,6 @@ const ItemDetail = ({ item }) => {
   const [itemCount, setItemCount] = useState(0);
   const itemCtxt = useContext(CartContext);
 
-
-
   const onAdd = (qty) => {
     if (qty > 0) {
       toast.success('Agregado al carrito!', {
