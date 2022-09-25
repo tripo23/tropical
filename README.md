@@ -9,6 +9,8 @@ This project is currently in development. Users can see a list of products and f
 
 ## Project Screen Shot(s)
 
+![Screen_Recording_2022-09-25_at_15_22_28_AdobeExpress](https://user-images.githubusercontent.com/85125239/192160680-b45cc186-3484-4711-810d-ba7379ea36c1.gif)
+
 ![Screenshot 2022-09-02 at 16 30 29](https://user-images.githubusercontent.com/85125239/188224284-34b80f11-518b-4b09-9c2f-3ea5c7c7767b.png)
 
 ![Screenshot 2022-09-02 at 16 28 28](https://user-images.githubusercontent.com/85125239/188224099-6f4d6732-d628-46d5-8697-f2236dfd5bc3.png)
