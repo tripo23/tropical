@@ -14,6 +14,9 @@ const CartContextProvider = ({children}) => {
 
         if (found) {
             found.qty = found.qty + qty;
+            setCartList([
+                ...cartList
+            ]);
         } else {
             let itemCheckout = {
                 ...item, qty

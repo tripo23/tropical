@@ -51,3 +51,5 @@ export const firestoreFetchSingleDoc = async (docID) => {
     console.log("No such document!");
     }
 }
+
+export default db;

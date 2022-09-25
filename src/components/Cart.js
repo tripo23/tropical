@@ -1,16 +1,64 @@
 import { CartContext } from "../context/CartContext";
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import '../styles/css/Cart.css';
 import { Button, Card, Container, Row, Col, Image } from "react-bootstrap";
 import ItemCart from "./ItemCart";
 import { Link } from 'react-router-dom';
-
-
-
+import { serverTimestamp, doc, collection, setDoc, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
 
+  const [purchased, setPurchased] = useState(false)
   const ctxt = useContext(CartContext);
+
+  const createOrder = () => {
+    let itemsDB = ctxt.cartList.map (item => ({
+      id: item.id,
+      title: item.name,
+      price: item.price,
+      qty: item.qty,
+    }))
+    let order = {
+      buyer: {
+        name: "Kratos",
+        email: "kratos@gow.com",
+        phone: "12345678"
+      },
+      date: serverTimestamp(),
+      total: ctxt.calcSubTotal(),
+      items: itemsDB
+    }
+    
+    const createOrderFB = async () => {
+      const newOrderRef = doc(collection(db, "orders")) // Si no existe la collection orders, la creo. Creo un doc dentro de la collection y obtengo el ID del doc.
+      await setDoc(newOrderRef, order); // en newOrderRef guardo la data del "order"
+      return newOrderRef;
+    }
+
+    createOrderFB()
+      .then(result => {
+        Swal.fire(
+          '¡Compra exitosa!',
+          'Tu orden con el ID ' + result.id + ' ha sido creada.',
+          'success'
+        )
+              
+        //Actualizo el stock en la DB
+        ctxt.cartList.forEach(async (element) => {
+          const itemRef = doc(db, "products", element.id);
+
+          await updateDoc(itemRef, {
+            stock: increment(-element.qty)
+          });
+        });  
+
+        ctxt.clear();
+        setPurchased(true);
+      })
+      .catch (err => console.log(err))
+  }
 
   return (
 
@@ -85,7 +133,7 @@ const Cart = () => {
                 </Row>
                 </Card.Body>
                 <Card.Body className="text-center">
-                  <Row><Button variant="success">Terminar mi compra</Button></Row>
+                  <Row><Button variant="success" onClick={createOrder}>Terminar mi compra</Button></Row>
                 </Card.Body>
             </Card>
           </Col>
@@ -93,7 +141,11 @@ const Cart = () => {
           : 
           <Container className="text-center w-75">
               <Row>
-                <p>Tu carrito está vacío, tal vez quisieras ver qué tenemos para ofrecerte...</p>
+                {
+                  purchased
+                  ? <h4>¡Muchas gracias por tu compra!</h4>
+                  : <p>Tu carrito está vacío, tal vez quisieras ver qué tenemos para ofrecerte...</p>
+                }
               </Row>
               <Row className="text-center justify-content-center">
                 <Col md={7}>
@@ -101,7 +153,12 @@ const Cart = () => {
                 </Col>
               </Row>
               <Row>
-                <Button id='buttonGoShopping' variant="success" as={Link} to='/'>Comprar plantitas</Button>
+                {
+                  purchased
+                  ? <Button id='buttonGoShopping' variant="success" as={Link} to='/'>¡Comprar más!</Button>
+                  : <Button id='buttonGoShopping' variant="success" as={Link} to='/'>Comprar plantitas</Button>
+                }
+                
               </Row>
           </Container>
         }

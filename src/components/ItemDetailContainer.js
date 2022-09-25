@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     firestoreFetchSingleDoc(id)
         .then (result => setProduct(result))
         .catch (err => console.log(err))
-  }, []);
+  }, [id]);
 
 
 
