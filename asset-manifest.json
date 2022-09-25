@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tropical/static/css/main.560f24eb.css",
+    "main.js": "/tropical/static/js/main.c4468178.js",
+    "index.html": "/tropical/index.html",
+    "main.560f24eb.css.map": "/tropical/static/css/main.560f24eb.css.map",
+    "main.c4468178.js.map": "/tropical/static/js/main.c4468178.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.560f24eb.css",
+    "static/js/main.c4468178.js"
+  ]
+}
