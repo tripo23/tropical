@@ -7,9 +7,13 @@ An ecommerce website for a garden business, built with React, Bootstrap, Javascr
 
 This project is currently in development. Users can see a list of products and filte them by category. Also they can access to an item detailed view. Add to cart feature is still in progress.
 
-## Project Screen Shot(s)
+## Project DEMO
 
-![demoTropical](https://user-images.githubusercontent.com/85125239/192161431-618359be-c6ad-4e57-837b-4898383eac52.gif)
+
+![demoTropical](https://user-images.githubusercontent.com/85125239/192161620-cd1ae142-855d-439e-b1e1-b6541274e582.gif)
+
+
+## Project Screen Shot(s)
 
 ![Screenshot 2022-09-02 at 16 30 29](https://user-images.githubusercontent.com/85125239/188224284-34b80f11-518b-4b09-9c2f-3ea5c7c7767b.png)
 
