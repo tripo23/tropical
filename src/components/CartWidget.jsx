@@ -1,9 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
-import '../styles/css/cartWidget.css';
-// import Badge from 'react-bootstrap/Badge';
-// import Button from 'react-bootstrap/Button';
-
+import '../styles/css/CartWidget.css';
 
 const CartWidget = () => {
 

@@ -19,8 +19,6 @@ const ItemCount = (props) => {
         count>=1 ? setCount(count-1) : setCount(count+0);    
     }
     
-    
-
     return(
         
         <>

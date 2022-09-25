@@ -1,4 +1,4 @@
-## Tropical Plantas
+# Tropical Plantas
 
 An ecommerce website for a garden business, built with React, Bootstrap, Javascript, And CSS.
 
@@ -21,3 +21,5 @@ This project is currently in development. Users can see a list of products and f
 * React Bootstrap
 * Materialize icons
 * Google Fonts
+* Toastify
+* Sweet Alert

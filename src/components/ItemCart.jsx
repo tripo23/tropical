@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
 import '../styles/css/ItemCart.css';
 import { CartContext } from "../context/CartContext";
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 
 const ItemCart = (props) => {
     
